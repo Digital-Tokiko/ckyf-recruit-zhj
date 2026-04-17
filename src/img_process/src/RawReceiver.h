@@ -11,6 +11,7 @@
 #include <opencv2/opencv.hpp>
 #include <std_msgs/msg/bool.hpp>
 #include "geometry_msgs/msg/point.hpp"
+#include "geometry_msgs/msg/point_stamped.hpp"
 
 enum type {
     RED,
@@ -30,7 +31,7 @@ private:
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr raw_img_subscriber_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr type_publisher_; //假红真蓝
     rclcpp::Publisher<geometry_msgs::msg::Point>::SharedPtr fort_point_publisher_;
-	rclcpp::Publisher<geometry_msgs::msg::Point>::SharedPtr board_publisher_; //x，y为原意，z表示种类，0红1蓝2灰
+	rclcpp::Publisher<geometry_msgs::msg::PointStamped>::SharedPtr board_publisher_; //x，y为原意，z表示种类，0红1蓝2灰
     cv_bridge::CvImagePtr raw_img_;
 
     cv::Mat raw_img_mat_;
@@ -55,7 +56,7 @@ public:
 
         fort_point_publisher_ = this->create_publisher<geometry_msgs::msg::Point>("fort_point",10);
 
-		board_publisher_ = this->create_publisher<geometry_msgs::msg::Point>("board_state", 10);
+		board_publisher_ = this->create_publisher<geometry_msgs::msg::PointStamped>("board_state", 10);
 
         type = NONE;
     }

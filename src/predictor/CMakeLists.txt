@@ -16,7 +16,7 @@ find_package(geometry_msgs REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-include_directories(${rclcpp_components_INCLUDE_DIRS} ${geometry_msgs_INCLUDE_DIRS})
+include_directories(${rclcpp_components_INCLUDE_DIRS} ${geometry_msgs_INCLUDE_DIRS} include/MyKalmanFilter/)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

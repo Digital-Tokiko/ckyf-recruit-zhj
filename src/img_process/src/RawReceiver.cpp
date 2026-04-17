@@ -24,8 +24,12 @@ void RawReceiver::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &m
                                     cv::Point(raw_img_mat_.cols, raw_img_mat_.rows), cv::Scalar(0), -1);
     cv::findContours(grey_img_mat_, contours_, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
 
+	//std::cout << "Contours count: " << contours_.size() << std::endl;
+
     //过滤掉背景数字造成的杂音
-    for (auto &it: contours_) if (cv::boundingRect(it).area() > 150) contours_rect_.push_back(cv::boundingRect(it));
+    //for (auto &it: contours_) if (cv::boundingRect(it).area() > 150) contours_rect_.push_back(cv::boundingRect(it));
+	for (auto &it: contours_) contours_rect_.push_back(cv::boundingRect(it));
+
 
     bg_mask_ = cv::Mat::zeros(raw_img_mat_.size(), CV_8UC1);
 
@@ -34,15 +38,10 @@ void RawReceiver::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &m
     cv::Mat hsv;
     cv::cvtColor(raw_img_mat_, hsv, cv::COLOR_BGR2HSV);
 
-    std::vector<double> active_rects;
-    std::map<double, cv::Rect> y_based_active_rects;
-    std::vector<double> avoid_active_rects;
-    std::map<double, cv::Rect> avoid_y_based_active_rects;
-
     if (type != NONE)
         for (auto &it: contours_rect_) {
             //遍历场上目标进行处理
-            if (it.area() < 1000) continue;
+            //if (it.area() < 500) continue;
             it.x += 1;
             it.y += 3;
             it.width -= 1;
@@ -51,24 +50,34 @@ void RawReceiver::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &m
             bg_mask_ = cv::Mat::zeros(raw_img_mat_.size(), CV_8UC1);
             cv::rectangle(bg_mask_, it, cv::Scalar(255), -1);
 
-            double y_center = it.y + it.height ;
-            //因为用y坐标来区分目标，所以需要化归来防止被错误区分开
+			cv::rectangle(test_mask_ , it, cv::Scalar(255,255,255) , -1);
+
+            double x_mid = it.x + it.width/2;
 
             double h_temp = cv::mean(hsv, bg_mask_)[0];
             double s_temp = cv::mean(hsv, bg_mask_)[1];
 
+            geometry_msgs::msg::PointStamped board_bottom_mid_point;
+            board_bottom_mid_point.header.stamp = this->now();
+
+            if (x_mid >= 1102 || x_mid <=50) break;
+            board_bottom_mid_point.point.x = x_mid;
+            board_bottom_mid_point.point.y = it.y + it.height;
+
             if (h_temp > 4) {
                 //蓝色目标
-
+                board_bottom_mid_point.point.z = 1;
             } else if (s_temp > 1) {
                 //红色目标
-
+                board_bottom_mid_point.point.z = 0;
             }
             else {
                 //所有灰色目标
                 //打中后的目标变灰，防止丢失
-
+                board_bottom_mid_point.point.z = 2;
             }
+
+            board_publisher_->publish(board_bottom_mid_point);
         }
 
     if (type == NONE) {
@@ -110,16 +119,10 @@ void RawReceiver::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &m
         }*/
     }
 
-    else {
-        for ( auto &it : contours_rect_ ) {
-            if ( it.area() < 100) continue;
-            cv::rectangle(test_mask_ , it, cv::Scalar(255,255,255) , -1);
-        }
-    }
-
     cv::bitwise_and(raw_img_mat_ , test_mask_, raw_img_mat_);
 
     cv::imshow("raw_img", raw_img_mat_);
+	//cv::imshow("bound_img",grey_img_mat_);
     cv::waitKey(1);
     //cv::destroyWindow("raw_img");
 
@@ -135,9 +138,11 @@ void RawReceiver::ProcessInit() {  //初始化操作
     contours_.clear();
     contours_rect_.clear();
 
-    cv::threshold(grey_img_mat_, grey_img_mat_, 255, 0, 255);
+    cv::threshold(grey_img_mat_, grey_img_mat_, 127, 255, cv::THRESH_BINARY);
     cv::GaussianBlur(grey_img_mat_, grey_img_mat_, cv::Size(3, 3), 1.0);
-    cv::Canny(grey_img_mat_, grey_img_mat_, 100, 200, 3);
+    cv::Canny(grey_img_mat_, grey_img_mat_, 30, 100, 3);
+	/*cv::morphologyEx(grey_img_mat_, grey_img_mat_, cv::MORPH_CLOSE,
+                 cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3,3)));*/
 }
 
 #include <rclcpp_components/register_node_macro.hpp>

@@ -7,11 +7,16 @@
 
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/bool.hpp>
+#include <Fort.h>
 #include <string>
 
 
 class Decider :public rclcpp::Node {
     private:
+
+    std::string port_;
+
+    Fort fort_;
 
     bool type; //假红真蓝
 
@@ -23,12 +28,18 @@ class Decider :public rclcpp::Node {
         if (!type) RCLCPP_INFO(this->get_logger(), "red");
         else RCLCPP_INFO(this->get_logger(), "blue");
 
+        fort_.TurnTo(90);
     }
 
     public:
 
     explicit Decider(const rclcpp::NodeOptions& options) : rclcpp::Node("decider",options) {
         type_subscriber_ = this->create_subscription<std_msgs::msg::Bool>("self_type", 10, std::bind(&Decider::TypeCallback, this, std::placeholders::_1));
+        this->declare_parameter("serial", "/dev/pts/0");
+        this->get_parameter("serial", port_);
+
+        fort_=Fort(port_,115200);
+
     }
 
 };

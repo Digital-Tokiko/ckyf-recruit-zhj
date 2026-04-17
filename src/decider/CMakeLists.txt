@@ -15,6 +15,8 @@ find_package(rclcpp REQUIRED)
 # find_package(<dependency> REQUIRED)
 
 include_directories(${rclcpp_components_INCLUDE_DIRS})
+include_directories(include msg_serializer thirdparty/serialib include/Fort)
+add_subdirectory(thirdparty/serialib)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -32,7 +34,7 @@ add_library(decider SHARED
         src/Decider.cpp
 )
 
-target_link_libraries(decider ${OpenCV_LIBS})
+target_link_libraries(decider ${OpenCV_LIBS} serialib)
 ament_target_dependencies(decider rclcpp std_msgs)
 
 rclcpp_components_register_nodes(decider "Decider")
