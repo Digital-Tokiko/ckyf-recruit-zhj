@@ -1,0 +1,11 @@
+source;share/decider/hook/cmake_prefix_path.ps1
+source;share/decider/hook/cmake_prefix_path.dsv
+source;share/decider/hook/cmake_prefix_path.sh
+source;share/decider/hook/ld_library_path_lib.ps1
+source;share/decider/hook/ld_library_path_lib.dsv
+source;share/decider/hook/ld_library_path_lib.sh
+source;share/decider/local_setup.bash
+source;share/decider/local_setup.dsv
+source;share/decider/local_setup.ps1
+source;share/decider/local_setup.sh
+source;share/decider/local_setup.zsh

@@ -1,0 +1,4 @@
+source;share/decider/local_setup.bash
+source;share/decider/local_setup.dsv
+source;share/decider/local_setup.sh
+source;share/decider/local_setup.zsh

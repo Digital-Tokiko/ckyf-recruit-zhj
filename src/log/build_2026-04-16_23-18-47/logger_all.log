@@ -1,0 +1,348 @@
+[0.067s] [34mcolcon[0m [1;30mDEBUG[0m [32mCommand line arguments: ['/usr/bin/colcon', 'build'][0m
+[0.068s] [34mcolcon[0m [1;30mDEBUG[0m [32mParsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=32, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7e6c1b7fa3b0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7e6c1b7f9ed0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7e6c1b7f9ed0>>)[0m
+[0.158s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) check parameters
+[0.158s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) check parameters
+[0.158s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) check parameters
+[0.158s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) check parameters
+[0.158s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(colcon_meta) discover
+[0.158s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) discover
+[0.158s] [34mcolcon.colcon_core.package_discovery[0m [1;30mINFO[0m Crawling recursively for packages in '/home/mizu/workspace/homework_ws/recruit/src'
+[0.158s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.159s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore'
+[0.159s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ignore_ament_install'
+[0.159s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_pkg']
+[0.159s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_pkg'
+[0.159s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['colcon_meta']
+[0.159s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'colcon_meta'
+[0.159s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['ros']
+[0.159s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'ros'
+[0.165s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['cmake', 'python']
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'cmake'
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python'
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extensions ['python_setup_py']
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(.) by extension 'python_setup_py'
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) by extension 'ignore'
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(build) ignored
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(decider) by extensions ['ignore', 'ignore_ament_install']
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(decider) by extension 'ignore'
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(decider) by extension 'ignore_ament_install'
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(decider) by extensions ['colcon_pkg']
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(decider) by extension 'colcon_pkg'
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(decider) by extensions ['colcon_meta']
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(decider) by extension 'colcon_meta'
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(decider) by extensions ['ros']
+[0.166s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(decider) by extension 'ros'
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'decider' with type 'ros.ament_cmake' and name 'decider'[0m
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(homework_bringup) by extensions ['ignore', 'ignore_ament_install']
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(homework_bringup) by extension 'ignore'
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(homework_bringup) by extension 'ignore_ament_install'
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(homework_bringup) by extensions ['colcon_pkg']
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(homework_bringup) by extension 'colcon_pkg'
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(homework_bringup) by extensions ['colcon_meta']
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(homework_bringup) by extension 'colcon_meta'
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(homework_bringup) by extensions ['ros']
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(homework_bringup) by extension 'ros'
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'homework_bringup' with type 'ros.ament_cmake' and name 'homework_bringup'[0m
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(img_process) by extensions ['ignore', 'ignore_ament_install']
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(img_process) by extension 'ignore'
+[0.168s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(img_process) by extension 'ignore_ament_install'
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(img_process) by extensions ['colcon_pkg']
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(img_process) by extension 'colcon_pkg'
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(img_process) by extensions ['colcon_meta']
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(img_process) by extension 'colcon_meta'
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(img_process) by extensions ['ros']
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(img_process) by extension 'ros'
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'img_process' with type 'ros.ament_cmake' and name 'img_process'[0m
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) by extension 'ignore'
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(install) ignored
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) by extension 'ignore'
+[0.169s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(log) ignored
+[0.170s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(predictor) by extensions ['ignore', 'ignore_ament_install']
+[0.170s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(predictor) by extension 'ignore'
+[0.170s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(predictor) by extension 'ignore_ament_install'
+[0.170s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(predictor) by extensions ['colcon_pkg']
+[0.170s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(predictor) by extension 'colcon_pkg'
+[0.170s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(predictor) by extensions ['colcon_meta']
+[0.170s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(predictor) by extension 'colcon_meta'
+[0.170s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(predictor) by extensions ['ros']
+[0.170s] [34mcolcon.colcon_core.package_identification[0m [1;30mLevel 1[0m _identify(predictor) by extension 'ros'
+[0.170s] [34mcolcon.colcon_core.package_identification[0m [1;30mDEBUG[0m [32mPackage 'predictor' with type 'ros.ament_cmake' and name 'predictor'[0m
+[0.170s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(recursive) using defaults
+[0.170s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) discover
+[0.170s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(ignore) using defaults
+[0.170s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) discover
+[0.170s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(path) using defaults
+[0.187s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) check parameters
+[0.187s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) discover
+[0.189s] [34mcolcon.colcon_installed_package_information.package_discovery[0m [1;30mDEBUG[0m [32mFound 272 installed packages in /opt/ros/humble[0m
+[0.190s] [34mcolcon.colcon_core.package_discovery[0m [1;30mLevel 1[0m discover_packages(prefix_path) using defaults
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'decider' build argument 'cmake_args' from command line to 'None'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'decider' build argument 'cmake_target' from command line to 'None'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'decider' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'decider' build argument 'cmake_clean_cache' from command line to 'False'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'decider' build argument 'cmake_clean_first' from command line to 'False'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'decider' build argument 'cmake_force_configure' from command line to 'False'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'decider' build argument 'ament_cmake_args' from command line to 'None'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'decider' build argument 'catkin_cmake_args' from command line to 'None'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'decider' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'decider' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mizu/workspace/homework_ws/recruit/src/build/decider', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mizu/workspace/homework_ws/recruit/src/install/decider', 'merge_install': False, 'path': '/home/mizu/workspace/homework_ws/recruit/src/decider', 'symlink_install': False, 'test_result_base': None}[0m
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'homework_bringup' build argument 'cmake_args' from command line to 'None'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'homework_bringup' build argument 'cmake_target' from command line to 'None'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'homework_bringup' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'homework_bringup' build argument 'cmake_clean_cache' from command line to 'False'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'homework_bringup' build argument 'cmake_clean_first' from command line to 'False'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'homework_bringup' build argument 'cmake_force_configure' from command line to 'False'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'homework_bringup' build argument 'ament_cmake_args' from command line to 'None'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'homework_bringup' build argument 'catkin_cmake_args' from command line to 'None'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'homework_bringup' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.210s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'homework_bringup' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mizu/workspace/homework_ws/recruit/src/build/homework_bringup', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup', 'merge_install': False, 'path': '/home/mizu/workspace/homework_ws/recruit/src/homework_bringup', 'symlink_install': False, 'test_result_base': None}[0m
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'img_process' build argument 'cmake_args' from command line to 'None'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'img_process' build argument 'cmake_target' from command line to 'None'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'img_process' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'img_process' build argument 'cmake_clean_cache' from command line to 'False'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'img_process' build argument 'cmake_clean_first' from command line to 'False'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'img_process' build argument 'cmake_force_configure' from command line to 'False'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'img_process' build argument 'ament_cmake_args' from command line to 'None'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'img_process' build argument 'catkin_cmake_args' from command line to 'None'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'img_process' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'img_process' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mizu/workspace/homework_ws/recruit/src/build/img_process', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mizu/workspace/homework_ws/recruit/src/install/img_process', 'merge_install': False, 'path': '/home/mizu/workspace/homework_ws/recruit/src/img_process', 'symlink_install': False, 'test_result_base': None}[0m
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'predictor' build argument 'cmake_args' from command line to 'None'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'predictor' build argument 'cmake_target' from command line to 'None'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'predictor' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'predictor' build argument 'cmake_clean_cache' from command line to 'False'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'predictor' build argument 'cmake_clean_first' from command line to 'False'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'predictor' build argument 'cmake_force_configure' from command line to 'False'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'predictor' build argument 'ament_cmake_args' from command line to 'None'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'predictor' build argument 'catkin_cmake_args' from command line to 'None'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mLevel 5[0m set package 'predictor' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.211s] [34mcolcon.colcon_core.verb[0m [1;30mDEBUG[0m [32mBuilding package 'predictor' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/mizu/workspace/homework_ws/recruit/src/build/predictor', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/mizu/workspace/homework_ws/recruit/src/install/predictor', 'merge_install': False, 'path': '/home/mizu/workspace/homework_ws/recruit/src/predictor', 'symlink_install': False, 'test_result_base': None}[0m
+[0.211s] [34mcolcon.colcon_core.executor[0m [1;30mINFO[0m Executing jobs using 'parallel' executor
+[0.212s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete[0m
+[0.212s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/mizu/workspace/homework_ws/recruit/src/decider' with build type 'ament_cmake'
+[0.212s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/mizu/workspace/homework_ws/recruit/src/decider'
+[0.213s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.214s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.214s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.216s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/mizu/workspace/homework_ws/recruit/src/homework_bringup' with build type 'ament_cmake'
+[0.216s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/mizu/workspace/homework_ws/recruit/src/homework_bringup'
+[0.216s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.216s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.218s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/mizu/workspace/homework_ws/recruit/src/img_process' with build type 'ament_cmake'
+[0.218s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/mizu/workspace/homework_ws/recruit/src/img_process'
+[0.218s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.218s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.219s] [34mcolcon.colcon_ros.task.ament_cmake.build[0m [1;30mINFO[0m Building ROS package in '/home/mizu/workspace/homework_ws/recruit/src/predictor' with build type 'ament_cmake'
+[0.219s] [34mcolcon.colcon_cmake.task.cmake.build[0m [1;30mINFO[0m Building CMake package in '/home/mizu/workspace/homework_ws/recruit/src/predictor'
+[0.220s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.220s] [34mcolcon.colcon_core.shell[0m [1;30mDEBUG[0m [32mSkip shell extension 'dsv' for command environment[0m
+[0.225s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/decider': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/mizu/workspace/homework_ws/recruit/src/decider -DCMAKE_INSTALL_PREFIX=/home/mizu/workspace/homework_ws/recruit/src/install/decider[0m
+[0.227s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/homework_bringup': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/mizu/workspace/homework_ws/recruit/src/homework_bringup -DCMAKE_INSTALL_PREFIX=/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup[0m
+[0.228s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/img_process': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/mizu/workspace/homework_ws/recruit/src/img_process -DCMAKE_INSTALL_PREFIX=/home/mizu/workspace/homework_ws/recruit/src/install/img_process[0m
+[0.232s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/predictor': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/mizu/workspace/homework_ws/recruit/src/predictor -DCMAKE_INSTALL_PREFIX=/home/mizu/workspace/homework_ws/recruit/src/install/predictor[0m
+[0.750s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/homework_bringup' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/mizu/workspace/homework_ws/recruit/src/homework_bringup -DCMAKE_INSTALL_PREFIX=/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup[0m
+[0.751s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/homework_bringup': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/mizu/workspace/homework_ws/recruit/src/build/homework_bringup -- -j32 -l32[0m
+[0.779s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/homework_bringup' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/mizu/workspace/homework_ws/recruit/src/build/homework_bringup -- -j32 -l32[0m
+[0.788s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/homework_bringup': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/mizu/workspace/homework_ws/recruit/src/build/homework_bringup[0m
+[0.794s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(homework_bringup)
+[0.795s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/homework_bringup' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/mizu/workspace/homework_ws/recruit/src/build/homework_bringup[0m
+[0.797s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup' for CMake module files
+[0.797s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup' for CMake config files
+[0.798s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('homework_bringup', 'cmake_prefix_path')
+[0.798s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/hook/cmake_prefix_path.ps1'
+[0.799s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/hook/cmake_prefix_path.dsv'
+[0.799s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/hook/cmake_prefix_path.sh'
+[0.800s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/bin'
+[0.800s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/lib/pkgconfig/homework_bringup.pc'
+[0.800s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/lib/python3.10/site-packages'
+[0.800s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/bin'
+[0.801s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/package.ps1'
+[0.802s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/package.dsv'
+[0.802s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/package.sh'
+[0.803s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/package.bash'
+[0.803s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/package.zsh'
+[0.804s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/colcon-core/packages/homework_bringup)
+[0.805s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(homework_bringup)
+[0.805s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup' for CMake module files
+[0.806s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup' for CMake config files
+[0.806s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('homework_bringup', 'cmake_prefix_path')
+[0.806s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/hook/cmake_prefix_path.ps1'
+[0.806s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/hook/cmake_prefix_path.dsv'
+[0.807s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/hook/cmake_prefix_path.sh'
+[0.807s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/bin'
+[0.807s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/lib/pkgconfig/homework_bringup.pc'
+[0.807s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/lib/python3.10/site-packages'
+[0.808s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/bin'
+[0.808s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/package.ps1'
+[0.809s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/package.dsv'
+[0.809s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/package.sh'
+[0.809s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/package.bash'
+[0.810s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/homework_bringup/package.zsh'
+[0.810s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/mizu/workspace/homework_ws/recruit/src/install/homework_bringup/share/colcon-core/packages/homework_bringup)
+[1.127s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/decider' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/mizu/workspace/homework_ws/recruit/src/decider -DCMAKE_INSTALL_PREFIX=/home/mizu/workspace/homework_ws/recruit/src/install/decider[0m
+[1.128s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/decider': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/mizu/workspace/homework_ws/recruit/src/build/decider -- -j32 -l32[0m
+[1.134s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/predictor' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/mizu/workspace/homework_ws/recruit/src/predictor -DCMAKE_INSTALL_PREFIX=/home/mizu/workspace/homework_ws/recruit/src/install/predictor[0m
+[1.136s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/predictor': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/mizu/workspace/homework_ws/recruit/src/build/predictor -- -j32 -l32[0m
+[1.153s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/img_process' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /home/mizu/workspace/homework_ws/recruit/src/img_process -DCMAKE_INSTALL_PREFIX=/home/mizu/workspace/homework_ws/recruit/src/install/img_process[0m
+[1.155s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/img_process': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/mizu/workspace/homework_ws/recruit/src/build/img_process -- -j32 -l32[0m
+[6.665s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/decider' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/mizu/workspace/homework_ws/recruit/src/build/decider -- -j32 -l32[0m
+[6.667s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/decider': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/mizu/workspace/homework_ws/recruit/src/build/decider[0m
+[6.680s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(decider)
+[6.680s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider' for CMake module files
+[6.681s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/decider' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/mizu/workspace/homework_ws/recruit/src/build/decider[0m
+[6.681s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider' for CMake config files
+[6.681s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('decider', 'cmake_prefix_path')
+[6.681s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/hook/cmake_prefix_path.ps1'
+[6.681s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/hook/cmake_prefix_path.dsv'
+[6.682s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/hook/cmake_prefix_path.sh'
+[6.682s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider/lib'
+[6.682s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('decider', 'ld_library_path_lib')
+[6.682s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/hook/ld_library_path_lib.ps1'
+[6.682s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/hook/ld_library_path_lib.dsv'
+[6.683s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/hook/ld_library_path_lib.sh'
+[6.683s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider/bin'
+[6.683s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider/lib/pkgconfig/decider.pc'
+[6.683s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider/lib/python3.10/site-packages'
+[6.683s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider/bin'
+[6.684s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/package.ps1'
+[6.684s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/package.dsv'
+[6.684s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/package.sh'
+[6.684s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/package.bash'
+[6.685s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/package.zsh'
+[6.685s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/colcon-core/packages/decider)
+[6.685s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(decider)
+[6.685s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider' for CMake module files
+[6.685s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider' for CMake config files
+[6.685s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('decider', 'cmake_prefix_path')
+[6.686s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/hook/cmake_prefix_path.ps1'
+[6.686s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/hook/cmake_prefix_path.dsv'
+[6.686s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/hook/cmake_prefix_path.sh'
+[6.686s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider/lib'
+[6.686s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('decider', 'ld_library_path_lib')
+[6.687s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/hook/ld_library_path_lib.ps1'
+[6.687s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/hook/ld_library_path_lib.dsv'
+[6.687s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/hook/ld_library_path_lib.sh'
+[6.687s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider/bin'
+[6.687s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider/lib/pkgconfig/decider.pc'
+[6.687s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider/lib/python3.10/site-packages'
+[6.688s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/decider/bin'
+[6.688s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/package.ps1'
+[6.688s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/package.dsv'
+[6.689s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/package.sh'
+[6.689s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/package.bash'
+[6.689s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/decider/package.zsh'
+[6.690s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/mizu/workspace/homework_ws/recruit/src/install/decider/share/colcon-core/packages/decider)
+[7.355s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/predictor' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/mizu/workspace/homework_ws/recruit/src/build/predictor -- -j32 -l32[0m
+[7.356s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/predictor': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/mizu/workspace/homework_ws/recruit/src/build/predictor[0m
+[7.368s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(predictor)
+[7.368s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor' for CMake module files
+[7.368s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/predictor' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/mizu/workspace/homework_ws/recruit/src/build/predictor[0m
+[7.368s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor' for CMake config files
+[7.369s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('predictor', 'cmake_prefix_path')
+[7.369s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/hook/cmake_prefix_path.ps1'
+[7.369s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/hook/cmake_prefix_path.dsv'
+[7.370s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/hook/cmake_prefix_path.sh'
+[7.370s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/lib'
+[7.370s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('predictor', 'ld_library_path_lib')
+[7.370s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/hook/ld_library_path_lib.ps1'
+[7.370s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/hook/ld_library_path_lib.dsv'
+[7.371s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/hook/ld_library_path_lib.sh'
+[7.371s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/bin'
+[7.371s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/lib/pkgconfig/predictor.pc'
+[7.371s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/lib/python3.10/site-packages'
+[7.371s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/bin'
+[7.371s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/package.ps1'
+[7.372s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/package.dsv'
+[7.372s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/package.sh'
+[7.372s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/package.bash'
+[7.372s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/package.zsh'
+[7.373s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/colcon-core/packages/predictor)
+[7.373s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(predictor)
+[7.373s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor' for CMake module files
+[7.373s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor' for CMake config files
+[7.373s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('predictor', 'cmake_prefix_path')
+[7.373s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/hook/cmake_prefix_path.ps1'
+[7.374s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/hook/cmake_prefix_path.dsv'
+[7.374s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/hook/cmake_prefix_path.sh'
+[7.374s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/lib'
+[7.374s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('predictor', 'ld_library_path_lib')
+[7.374s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/hook/ld_library_path_lib.ps1'
+[7.375s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/hook/ld_library_path_lib.dsv'
+[7.375s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/hook/ld_library_path_lib.sh'
+[7.375s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/bin'
+[7.375s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/lib/pkgconfig/predictor.pc'
+[7.375s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/lib/python3.10/site-packages'
+[7.375s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/bin'
+[7.376s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/package.ps1'
+[7.376s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/package.dsv'
+[7.376s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/package.sh'
+[7.376s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/package.bash'
+[7.377s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/predictor/package.zsh'
+[7.377s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/mizu/workspace/homework_ws/recruit/src/install/predictor/share/colcon-core/packages/predictor)
+[7.945s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/img_process' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/mizu/workspace/homework_ws/recruit/src/build/img_process -- -j32 -l32[0m
+[7.946s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/img_process': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/mizu/workspace/homework_ws/recruit/src/build/img_process[0m
+[7.960s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(img_process)
+[7.961s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process' for CMake module files
+[7.961s] [34mcolcon.colcon_core.event_handler.log_command[0m [1;30mDEBUG[0m [32mInvoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/img_process' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/mizu/workspace/homework_ws/recruit/src/build/img_process[0m
+[7.961s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process' for CMake config files
+[7.961s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('img_process', 'cmake_prefix_path')
+[7.962s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/hook/cmake_prefix_path.ps1'
+[7.962s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/hook/cmake_prefix_path.dsv'
+[7.962s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/hook/cmake_prefix_path.sh'
+[7.963s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/lib'
+[7.963s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('img_process', 'ld_library_path_lib')
+[7.963s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/hook/ld_library_path_lib.ps1'
+[7.963s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/hook/ld_library_path_lib.dsv'
+[7.963s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/hook/ld_library_path_lib.sh'
+[7.964s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/bin'
+[7.964s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/lib/pkgconfig/img_process.pc'
+[7.964s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/lib/python3.10/site-packages'
+[7.964s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/bin'
+[7.964s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/package.ps1'
+[7.965s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/package.dsv'
+[7.965s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/package.sh'
+[7.965s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/package.bash'
+[7.966s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/package.zsh'
+[7.966s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/colcon-core/packages/img_process)
+[7.966s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_environment_scripts_only(img_process)
+[7.966s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process' for CMake module files
+[7.966s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process' for CMake config files
+[7.967s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('img_process', 'cmake_prefix_path')
+[7.967s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/hook/cmake_prefix_path.ps1'
+[7.967s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/hook/cmake_prefix_path.dsv'
+[7.967s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/hook/cmake_prefix_path.sh'
+[7.968s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/lib'
+[7.968s] [34mcolcon.colcon_core.shell[0m [1;30mLevel 1[0m create_environment_hook('img_process', 'ld_library_path_lib')
+[7.968s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/hook/ld_library_path_lib.ps1'
+[7.968s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/hook/ld_library_path_lib.dsv'
+[7.968s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating environment hook '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/hook/ld_library_path_lib.sh'
+[7.968s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/bin'
+[7.968s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/lib/pkgconfig/img_process.pc'
+[7.968s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/lib/python3.10/site-packages'
+[7.969s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m checking '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/bin'
+[7.969s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/package.ps1'
+[7.969s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package descriptor '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/package.dsv'
+[7.969s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/package.sh'
+[7.970s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/package.bash'
+[7.970s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating package script '/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/package.zsh'
+[7.970s] [34mcolcon.colcon_core.environment[0m [1;30mLevel 1[0m create_file_with_runtime_dependencies(/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/colcon-core/packages/img_process)
+[7.970s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mclosing loop[0m
+[7.970s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mloop closed[0m
+[7.970s] [34mcolcon.colcon_parallel_executor.executor.parallel[0m [1;30mDEBUG[0m [32mrun_until_complete finished with '0'[0m
+[7.970s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoining thread[0m
+[7.974s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[7.975s] [34mcolcon.colcon_core.plugin_system[0m [1;30mINFO[0m Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[7.975s] [34mcolcon.colcon_notification.desktop_notification[0m [1;30mINFO[0m Sending desktop notification using 'notify2'
+[7.986s] [34mcolcon.colcon_core.event_reactor[0m [1;30mDEBUG[0m [32mjoined thread[0m
+[7.987s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/mizu/workspace/homework_ws/recruit/src/install/local_setup.ps1'
+[7.988s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/mizu/workspace/homework_ws/recruit/src/install/_local_setup_util_ps1.py'
+[7.990s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/mizu/workspace/homework_ws/recruit/src/install/setup.ps1'
+[7.990s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/mizu/workspace/homework_ws/recruit/src/install/local_setup.sh'
+[7.990s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix util module '/home/mizu/workspace/homework_ws/recruit/src/install/_local_setup_util_sh.py'
+[7.991s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/mizu/workspace/homework_ws/recruit/src/install/setup.sh'
+[7.991s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/mizu/workspace/homework_ws/recruit/src/install/local_setup.bash'
+[7.991s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/mizu/workspace/homework_ws/recruit/src/install/setup.bash'
+[7.992s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix script '/home/mizu/workspace/homework_ws/recruit/src/install/local_setup.zsh'
+[7.993s] [34mcolcon.colcon_core.shell[0m [1;30mINFO[0m Creating prefix chain script '/home/mizu/workspace/homework_ws/recruit/src/install/setup.zsh'

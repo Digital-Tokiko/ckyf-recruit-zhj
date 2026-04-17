@@ -1,0 +1,17 @@
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/lib/libimg_process.so
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/ament_index/resource_index/package_run_dependencies/img_process
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/ament_index/resource_index/parent_prefix_path/img_process
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/environment/ament_prefix_path.sh
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/environment/ament_prefix_path.dsv
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/environment/path.sh
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/environment/path.dsv
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/local_setup.bash
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/local_setup.sh
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/local_setup.zsh
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/local_setup.dsv
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/package.dsv
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/ament_index/resource_index/packages/img_process
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/ament_index/resource_index/rclcpp_components/img_process
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/cmake/img_processConfig.cmake
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/cmake/img_processConfig-version.cmake
+/home/mizu/workspace/homework_ws/recruit/src/install/img_process/share/img_process/package.xml
