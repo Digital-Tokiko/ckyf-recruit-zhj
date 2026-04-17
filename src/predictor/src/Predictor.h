@@ -36,13 +36,9 @@ private:
     struct MyKalmanInit ca_right_;
 
     double R_value_;
-    double Q_x_;
-    double Q_v_;
-    double Q_a_;
 
     double common_speed_;
 
-    cv::Mat A_;
     cv::Mat P_;
     cv::Mat H_;
     cv::Mat R_;
@@ -118,6 +114,12 @@ private:
             double sec = msg->header.stamp.sec + msg->header.stamp.nanosec / 1e9;
             dt = sec - last_time_[y];
             last_time_[y] = sec;
+			for (auto it=ys_.begin();it!=ys_.end();it++) {
+				if (*it == y) {
+					ys_.erase(it);
+					break;
+				}
+			}
         }
         else last_time_[y] = msg->header.stamp.sec + msg->header.stamp.nanosec / 1e9;
 
@@ -131,9 +133,12 @@ private:
         }
 
         else{
-            A_ = makeA(dt);
-            filters_[msg->point.z].find(y)->second->Predict(A_,makeQ(dt));
-            filters_[msg->point.z].find(y)->second->Update((cv::Mat_<double>(1, 1) << msg->point.x));
+            cv::Mat A = makeA(dt);
+			if (filters_[msg->point.z].find(y)!=filters_[msg->point.z].end()) {
+				filters_[msg->point.z].find(y)->second->Predict(A,makeQ(dt));
+            	filters_[msg->point.z].find(y)->second->Update((cv::Mat_<double>(1, 1) << msg->point.x));
+			}
+			else std::cout<< "yes,it is"<<std::endl;
         }
     }
 

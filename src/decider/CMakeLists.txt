@@ -14,9 +14,9 @@ find_package(rclcpp REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-include_directories(${rclcpp_components_INCLUDE_DIRS})
 include_directories(include msg_serializer thirdparty/serialib include/Fort)
 add_subdirectory(thirdparty/serialib)
+include_directories(${rclcpp_components_INCLUDE_DIRS})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

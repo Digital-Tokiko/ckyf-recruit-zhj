@@ -19,10 +19,6 @@ from launch.substitutions import LaunchConfiguration
 
 def generate_launch_description():
     return LaunchDescription([
-        DeclareLaunchArgument(
-            'serial',
-            default_value='/dev/pts/0'
-        ),
         Node(
             name='homework_container',
             package='rclcpp_components',
@@ -36,19 +32,21 @@ def generate_launch_description():
                     package='img_process',
                     plugin='RawReceiver',
                     name='raw_receiver',
+                    parameters=[{'R': 0.03},{'q' : 1.0},{'common_speed': 200.0}],
                     #parameters=[{'param1': 'value'}],
                 ),
                 ComposableNode(
                     package='predictor',
                     plugin='Predictor',
                     name='Predictor',
-                    parameters=[{'R': 0.03},{'q' : 1.0},{'common_speed': 200.0}],
+                    #parameters=[{'param1': 'value'}],
                 ),
                 ComposableNode(
                     package='decider',
                     plugin='Decider',
                     name='Decider',
                     parameters=[{'serial': LaunchConfiguration('serial')}],
+                    #parameters=[{'param1': 'value'}],
                 ),
             ],
         )

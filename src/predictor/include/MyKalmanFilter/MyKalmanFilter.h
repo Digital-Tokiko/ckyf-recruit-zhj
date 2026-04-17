@@ -62,6 +62,11 @@ public:
     }*/
 
     void Predict(const cv::Mat& A,const cv::Mat& Q) {
+    	if (x_k_1_.empty()) {
+        	std::cout << "ERROR: empty matrix detected!" << std::endl;
+        	return;
+   		 }
+
         x_k_Expected_ = A * x_k_1_;
         P_k_Expected_ = A * P_k_1_ * A.t() + Q;
     }
