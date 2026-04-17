@@ -1,4 +1,0 @@
-Invoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/predictor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mizu/workspace/homework_ws/recruit/src/build/predictor -- -j32 -l32
-Invoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/predictor' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/mizu/workspace/homework_ws/recruit/src/build/predictor -- -j32 -l32
-Invoking command in '/home/mizu/workspace/homework_ws/recruit/src/build/predictor': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mizu/workspace/homework_ws/recruit/src/build/predictor
-Invoked command in '/home/mizu/workspace/homework_ws/recruit/src/build/predictor' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/mizu/workspace/homework_ws/recruit/src/build/predictor
