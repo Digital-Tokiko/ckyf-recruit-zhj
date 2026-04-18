@@ -75,11 +75,19 @@ void Predictor::CalcFire() {
 
         cv::Point point_predicted(x /* + 32 */, y);
 
+        geometry_msgs::msg::Point to_draw;
+
+        to_draw.x = x;
+        to_draw.y = y;
+        to_draw.z = 1;
+
+        draw_publisher_ -> publish(to_draw);
+
+        RCLCPP_INFO(this->get_logger(), "aiming:(%.2f,%.2f) v:%.2f a:%.2f",x,y,v,a);
 
 		double time_gap = cv::norm(point_predicted - fort_point_) / 600;
 
         CalcX(point_predicted, v ,a,time_gap);
-
 
         angle = atan2(fort_point_.y - y, point_predicted.x - fort_point_.x) * 180 / M_PI; //dy取了相反数
 
@@ -106,6 +114,14 @@ void Predictor::CalcFire() {
 
                 angle1 = atan2(fort_point_.y - y1, point_predicted1.x - fort_point_.x + 32) * 180 / M_PI; //dy取了相反数
 				angle2 = atan2(fort_point_.y - y1, point_predicted1.x - fort_point_.x - 32) * 180 / M_PI; //dy取了相反数
+
+                geometry_msgs::msg::Point to_draw;
+
+                to_draw.x = x1;
+                to_draw.y = y1;
+                to_draw.z = 1;
+
+                draw_publisher_ -> publish(to_draw);
 
 				//ToDraw.push_back( cv::Rect (cv::Point(point_predicted1.x- 5,y1-5), cv::Point(point_predicted1.x+5,y1+5)));
 
@@ -188,6 +204,15 @@ void Predictor::BoardCallback(const geometry_msgs::msg::PointStamped::SharedPtr 
         if (filters_[msg->point.z].find(y)!=filters_[msg->point.z].end()) {
             filters_[msg->point.z].find(y)->second->Predict(A,makeQ(dt));
             filters_[msg->point.z].find(y)->second->Update((cv::Mat_<double>(1, 1) << msg->point.x));
+
+            geometry_msgs::msg::Point to_draw;
+
+            cv::Mat Xk = filters_[msg->point.z].find(y)->second->GetXk();
+            to_draw.x = Xk.at<double>(0,0);
+            to_draw.y = y + 16;
+            to_draw.z = 2;
+
+            draw_publisher_ -> publish(to_draw);
         }
     }
 }

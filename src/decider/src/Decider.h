@@ -38,6 +38,7 @@ class Decider :public rclcpp::Node {
 
         fort_=Fort(port_,115200);
 
+		fort_.TurnTo(90);
     }
 
 };

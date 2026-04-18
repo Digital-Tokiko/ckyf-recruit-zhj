@@ -29,10 +29,17 @@ def generate_launch_description():
             target_container='homework_container',
             composable_node_descriptions=[
                 ComposableNode(
+                    package='decider',
+                    plugin='Decider',
+                    name='Decider',
+                    parameters=[{'serial': LaunchConfiguration('serial')}],
+                    #parameters=[{'param1': 'value'}],
+                ),
+                ComposableNode(
                     package='img_process',
                     plugin='RawReceiver',
                     name='raw_receiver',
-                    parameters=[{'R': 0.01},{'q' : 1.0},{'common_speed': 200.0}],
+                    parameters=[{'R': 0.03},{'q' : 1.0},{'common_speed': 200.0}],
                     #parameters=[{'param1': 'value'}],
                 ),
                 ComposableNode(
@@ -42,10 +49,9 @@ def generate_launch_description():
                     #parameters=[{'param1': 'value'}],
                 ),
                 ComposableNode(
-                    package='decider',
-                    plugin='Decider',
-                    name='Decider',
-                    parameters=[{'serial': LaunchConfiguration('serial')}],
+                    package='drawer',
+                    plugin='Drawer',
+                    name='Drawer',
                     #parameters=[{'param1': 'value'}],
                 ),
             ],

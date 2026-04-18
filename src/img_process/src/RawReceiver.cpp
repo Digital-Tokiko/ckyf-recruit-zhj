@@ -7,18 +7,9 @@
 
 void RawReceiver::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &msg) {
 
-	dt_ = now().seconds() - last_time_;
-
-	last_time_ = now().seconds();
-
     raw_img_ = cv_bridge::toCvCopy(msg);
 
     ProcessInit();
-
-	for (auto &it: ToDraw) {
-			cv::rectangle(raw_img_mat_,it, cv::Scalar(255, 0, 0), 2, cv::LINE_8);
-	}
-	ToDraw.clear();
 
     if (type != NONE) cv::rectangle(grey_img_mat_, cv::Point(0, raw_img_mat_.rows - 100),
                                     cv::Point(raw_img_mat_.cols, raw_img_mat_.rows), cv::Scalar(0), -1);
@@ -29,15 +20,10 @@ void RawReceiver::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &m
 
     bg_mask_ = cv::Mat::zeros(raw_img_mat_.size(), CV_8UC1);
 
-    cv::Mat test_mask_ = cv::Mat::zeros(raw_img_mat_.size() , CV_8UC3);
+    //cv::Mat test_mask_ = cv::Mat::zeros(raw_img_mat_.size() , CV_8UC3);
 
     cv::Mat hsv;
     cv::cvtColor(raw_img_mat_, hsv, cv::COLOR_BGR2HSV);
-
-    std::vector<double> active_rects;
-    std::map<double, cv::Rect> y_based_active_rects;
-    std::vector<double> avoid_active_rects;
-    std::map<double, cv::Rect> avoid_y_based_active_rects;
 
     if (type != NONE)
         for (auto &it: contours_rect_) {
@@ -61,6 +47,16 @@ void RawReceiver::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &m
             board_bottom_mid_point.header.stamp = this->now();
 
             if (x_mid >= 1102 || x_mid <=50) break;
+
+            geometry_msgs::msg::Point to_draw;
+
+            to_draw.x = x_mid;
+            to_draw.y = it.y + it.height;
+            to_draw.z = 0;
+
+            draw_publisher_ -> publish(to_draw);
+
+
             board_bottom_mid_point.point.x = x_mid;
             board_bottom_mid_point.point.y = it.y + it.height;
 
@@ -101,7 +97,7 @@ void RawReceiver::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &m
 
         fort_point_publisher_->publish(fort_point_msg);
 
-        cv::rectangle(test_mask_ , contours_rect_[max_area_index] , cv::Scalar(255,255,255) , -1);
+        //cv::rectangle(test_mask_ , contours_rect_[max_area_index] , cv::Scalar(255,255,255) , -1);
 
         double h_temp = cv::mean(hsv, bg_mask_)[0];
         if (h_temp <= 10) {
@@ -122,14 +118,14 @@ void RawReceiver::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &m
     else {
         for ( auto &it : contours_rect_ ) {
             if (it.area() < 1000) continue;
-            cv::rectangle(test_mask_ , it, cv::Scalar(255,255,255) , -1);
+            //cv::rectangle(test_mask_ , it, cv::Scalar(255,255,255) , -1);
         }
     }
 
-    cv::bitwise_and(raw_img_mat_ , test_mask_, raw_img_mat_);
+    /*cv::bitwise_and(raw_img_mat_ , test_mask_, raw_img_mat_);
 
     cv::imshow("raw_img", raw_img_mat_);
-    cv::waitKey(1);
+    cv::waitKey(1);*/
     //cv::destroyWindow("raw_img");
 
 

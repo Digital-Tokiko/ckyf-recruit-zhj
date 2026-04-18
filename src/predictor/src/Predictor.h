@@ -42,6 +42,8 @@ private:
 	rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr angle_publisher_;
     rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr board_subscriber_;
 
+	rclcpp::Publisher<geometry_msgs::msg::Point>::SharedPtr draw_publisher_;
+
 	std::mutex filters_mutex_;
     std::vector<std::map<double, std::unique_ptr<MyKalmanFilter>>> filters_; //0红1蓝2灰
     std::vector<std::map<double,double>> last_time_; //其实可以和滤波器整合为一个数据结构，但是有点小麻烦还是算了（
@@ -137,6 +139,8 @@ public:
         type_subscriber_ = this->create_subscription<std_msgs::msg::Bool>("self_type", 10, std::bind(&Predictor::TypeCallback, this, std::placeholders::_1));
 
 		angle_publisher_ = this->create_publisher<std_msgs::msg::Float64>("angle", 10);
+
+		draw_publisher_ = this->create_publisher<geometry_msgs::msg::Point>("draw", 10);
 
         board_subscriber_ = this->create_subscription<geometry_msgs::msg::PointStamped>("board_state",10, std::bind(&Predictor::BoardCallback, this, std::placeholders::_1));
 

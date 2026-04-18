@@ -21,12 +21,9 @@ enum type {
 
 class RawReceiver : public rclcpp::Node {
 private:
-	std::vector<cv::Rect> ToDraw;
-
-	double last_time_;
-	double dt_;
-
     std_msgs::msg::Bool type_msg_;
+
+    rclcpp::Publisher<geometry_msgs::msg::Point>::SharedPtr draw_publisher_;
 
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr raw_img_subscriber_;
     rclcpp::Publisher<std_msgs::msg::Bool>::SharedPtr type_publisher_; //假红真蓝
@@ -48,6 +45,8 @@ private:
     void imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &msg);
 public:
     explicit RawReceiver(const rclcpp::NodeOptions& options) : rclcpp::Node("raw_receiver",options) {
+
+        draw_publisher_ = this->create_publisher<geometry_msgs::msg::Point>("draw", 10);
 
         raw_img_subscriber_ = this->create_subscription<sensor_msgs::msg::Image>(
             "image_raw", 10, std::bind(&RawReceiver::imageCallback, this, std::placeholders::_1));
