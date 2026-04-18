@@ -9,6 +9,8 @@
 #include <opencv2/opencv.hpp>
 #include "geometry_msgs/msg/point.hpp"
 #include "geometry_msgs/msg/point_stamped.hpp"
+#include "std_msgs/msg/float64.hpp"
+#include "std_msgs/msg/bool.hpp"
 #include "MyKalmanFilter.h"
 #include <map>
 #include <vector>
@@ -25,9 +27,24 @@ enum type {
 
 class Predictor :public rclcpp::Node {
 private:
+   	cv::Point fort_point_;
+
+	std::vector<double> last_avoid_;
+
+	double last_aim_;
+
+    bool type_; //假红真蓝
+
+	rclcpp::TimerBase::SharedPtr aim_timer_;
+
+    rclcpp::Subscription<geometry_msgs::msg::Point>::SharedPtr fort_point_subscriber_;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr type_subscriber_; //假红真蓝
+	rclcpp::Publisher<std_msgs::msg::Float64>::SharedPtr angle_publisher_;
+    rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr board_subscriber_;
+
 	std::mutex filters_mutex_;
     std::vector<std::map<double, std::unique_ptr<MyKalmanFilter>>> filters_; //0红1蓝2灰
-    std::map<double,double> last_time_; //其实可以和滤波器整合为一个数据结构，但是有点小麻烦还是算了（
+    std::vector<std::map<double,double>> last_time_; //其实可以和滤波器整合为一个数据结构，但是有点小麻烦还是算了（
     std::vector<double> ys_;
 
     rclcpp::TimerBase::SharedPtr clear_timer_;
@@ -50,10 +67,7 @@ private:
 
     cv::Mat zk_;
 
-    cv::Point fort_point_;
 
-    rclcpp::Subscription<geometry_msgs::msg::Point>::SharedPtr fort_point_subscriber_;
-    rclcpp::Subscription<geometry_msgs::msg::PointStamped>::SharedPtr board_subscriber_;
 
     cv::Mat makeA(double dt){
         return (cv::Mat_<double>(3, 3) << 1, dt,dt* dt/ 2,
@@ -74,6 +88,9 @@ private:
                                            Q_x_coa, Q_v_coa, Q_a);
     };
 
+    void CalcX(cv::Point& point,double v,double a,double init);
+	void CalcFire();
+
     void ClearDead() {
         double current_time = now().seconds();
 
@@ -82,71 +99,45 @@ private:
         for (int i=0;i<3;i++) {
             for (auto it = filters_[i].begin(); it != filters_[i].end();) {
                 //除去不需要的滤波对象***
-                if (current_time - last_time_[it->first] > 0.5) {
-                    last_time_.erase(it->first);
+                if (current_time - last_time_[i][it->first] > 1) {
+                    last_time_[i].erase(it->first);
+                    for (auto it1=ys_.begin();it1!=ys_.end();it1++) {
+                        if (*it1 == it->first) {
+                            ys_.erase(it1);
+                            break;
+                        }
+                    }
                     it = filters_[i].erase(it);
                 } else ++it;
             }
         }
     }
 
-    void FortPointCallback(const geometry_msgs::msg::Point::SharedPtr msg) {
+	void FortPointCallback(const geometry_msgs::msg::Point::SharedPtr msg) {
         fort_point_.x = msg->x;
         fort_point_.y = msg->y;
         std::cout << fort_point_.x << " " << fort_point_.y << std::endl;
     }
 
-    void BoardCallback(const geometry_msgs::msg::PointStamped::SharedPtr msg) {
-		std::lock_guard<std::mutex> lock(filters_mutex_);
+    void TypeCallback(const std_msgs::msg::Bool::ConstSharedPtr &msg) {
+        type_ = msg->data;
 
-        double y=-1;
-        //因为用y坐标来区分目标，所以需要化归来防止被错误区分开
-        for (auto &it: ys_) {
-            if (fabs(it - msg->point.y) < 1) {
-                y = it;
-                break;
-            }
-        }
+        if (!type_) RCLCPP_INFO(this->get_logger(), "red");
+        else RCLCPP_INFO(this->get_logger(), "blue");
 
-        double dt;
-
-        if (last_time_.count(y)) {
-            double sec = msg->header.stamp.sec + msg->header.stamp.nanosec / 1e9;
-            dt = sec - last_time_[y];
-            last_time_[y] = sec;
-			for (auto it=ys_.begin();it!=ys_.end();it++) {
-				if (*it == y) {
-					ys_.erase(it);
-					break;
-				}
-			}
-        }
-        else last_time_[y] = msg->header.stamp.sec + msg->header.stamp.nanosec / 1e9;
-
-        if (y<0) {
-            y = msg->point.y;
-            ys_.push_back(y);
-
-            if (msg->point.x < 100) filters_[msg->point.z].insert({y,std::make_unique<MyKalmanFilter>(ca_left_)});
-            else filters_[msg->point.z].insert({y,std::make_unique<MyKalmanFilter>(ca_right_)});
-
-        }
-
-        else{
-            cv::Mat A = makeA(dt);
-			if (filters_[msg->point.z].find(y)!=filters_[msg->point.z].end()) {
-				filters_[msg->point.z].find(y)->second->Predict(A,makeQ(dt));
-            	filters_[msg->point.z].find(y)->second->Update((cv::Mat_<double>(1, 1) << msg->point.x));
-			}
-			else std::cout<< "yes,it is"<<std::endl;
-        }
+        //fort_.TurnTo(90);
     }
+
+    void BoardCallback(const geometry_msgs::msg::PointStamped::SharedPtr msg) ;
 
 public:
     explicit Predictor(const rclcpp::NodeOptions& options) : rclcpp::Node("predictor",options) {
 
-        fort_point_ = cv::Point(0,0);
         fort_point_subscriber_ = this->create_subscription<geometry_msgs::msg::Point>("fort_point", 10, std::bind(&Predictor::FortPointCallback, this, std::placeholders::_1));
+        type_subscriber_ = this->create_subscription<std_msgs::msg::Bool>("self_type", 10, std::bind(&Predictor::TypeCallback, this, std::placeholders::_1));
+
+		angle_publisher_ = this->create_publisher<std_msgs::msg::Float64>("angle", 10);
+
         board_subscriber_ = this->create_subscription<geometry_msgs::msg::PointStamped>("board_state",10, std::bind(&Predictor::BoardCallback, this, std::placeholders::_1));
 
         this->declare_parameter("R", 0.03);
@@ -174,10 +165,16 @@ public:
         ca_right_ = MyKalmanInit{ P_, H_,  R_, x0_R_};
 
         for (int i=0;i<3;i++) filters_.push_back(std::map<double,std::unique_ptr<MyKalmanFilter>>());
+		for (int i=0;i<3;i++) last_time_.push_back(std::map<double,double>());
 
         zk_ = cv::Mat::zeros(1, 1, CV_64F);
 
-        clear_timer_ = this->create_wall_timer(std::chrono::milliseconds(2000), std::bind(&Predictor::ClearDead, this));
+        clear_timer_ = this->create_wall_timer(std::chrono::milliseconds(1000), std::bind(&Predictor::ClearDead, this));
+		aim_timer_ = this->create_wall_timer(std::chrono::milliseconds(80), std::bind(&Predictor::CalcFire, this));
+
+		std_msgs::msg::Float64 angle_msg;
+    	angle_msg.data=90;
+    	angle_publisher_->publish(angle_msg);
 
         this->add_on_set_parameters_callback([this](const std::vector<rclcpp::Parameter> & parameters) {
             rcl_interfaces::msg::SetParametersResult result;

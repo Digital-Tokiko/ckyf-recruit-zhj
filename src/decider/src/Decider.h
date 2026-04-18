@@ -6,37 +6,35 @@
 #define RECRUIT_DECIDER_H
 
 #include <rclcpp/rclcpp.hpp>
-#include <std_msgs/msg/bool.hpp>
-#include <string>
-#include <Fort.h>
+#include <std_msgs/msg/float64.hpp>
 
+#include <Fort.h>
 
 class Decider :public rclcpp::Node {
     private:
-
     std::string port_;
 
     Fort fort_;
 
-    bool type; //假红真蓝
+	rclcpp::TimerBase::SharedPtr fire_timer_;
 
-    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr type_subscriber_; //假红真蓝
+	rclcpp::Subscription<std_msgs::msg::Float64>::SharedPtr angle_subscriber_;
 
-    void TypeCallback(const std_msgs::msg::Bool::ConstSharedPtr &msg) {
-        type = msg->data;
-
-        if (!type) RCLCPP_INFO(this->get_logger(), "red");
-        else RCLCPP_INFO(this->get_logger(), "blue");
-
-        fort_.TurnTo(90);
+    void Fire() {
+        fort_.Fire();
+        fire_timer_->cancel();
     }
+
+    void AimAndFire(const std_msgs::msg::Float64::SharedPtr msg);
 
     public:
 
     explicit Decider(const rclcpp::NodeOptions& options) : rclcpp::Node("decider",options) {
-        type_subscriber_ = this->create_subscription<std_msgs::msg::Bool>("self_type", 10, std::bind(&Decider::TypeCallback, this, std::placeholders::_1));
+
         this->declare_parameter("serial", "/dev/pts/0");
         this->get_parameter("serial", port_);
+
+		angle_subscriber_ = this->create_subscription<std_msgs::msg::Float64>("angle", 10, std::bind(&Decider::AimAndFire, this, std::placeholders::_1));
 
         fort_=Fort(port_,115200);
 

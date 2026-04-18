@@ -32,7 +32,7 @@ def generate_launch_description():
                     package='img_process',
                     plugin='RawReceiver',
                     name='raw_receiver',
-                    parameters=[{'R': 0.03},{'q' : 1.0},{'common_speed': 200.0}],
+                    parameters=[{'R': 0.01},{'q' : 1.0},{'common_speed': 200.0}],
                     #parameters=[{'param1': 'value'}],
                 ),
                 ComposableNode(

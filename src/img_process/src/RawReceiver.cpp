@@ -51,24 +51,33 @@ void RawReceiver::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &m
             bg_mask_ = cv::Mat::zeros(raw_img_mat_.size(), CV_8UC1);
             cv::rectangle(bg_mask_, it, cv::Scalar(255), -1);
 
-            double y_center = it.y + it.height ;
-            //因为用y坐标来区分目标，所以需要化归来防止被错误区分开
 
             double h_temp = cv::mean(hsv, bg_mask_)[0];
             double s_temp = cv::mean(hsv, bg_mask_)[1];
 
+            double x_mid = it.x + it.width/2;
+
+            geometry_msgs::msg::PointStamped board_bottom_mid_point;
+            board_bottom_mid_point.header.stamp = this->now();
+
+            if (x_mid >= 1102 || x_mid <=50) break;
+            board_bottom_mid_point.point.x = x_mid;
+            board_bottom_mid_point.point.y = it.y + it.height;
+
             if (h_temp > 4) {
                 //蓝色目标
-
+                board_bottom_mid_point.point.z = 1;
             } else if (s_temp > 1) {
                 //红色目标
-
+                board_bottom_mid_point.point.z = 0;
             }
             else {
                 //所有灰色目标
                 //打中后的目标变灰，防止丢失
-
+                board_bottom_mid_point.point.z = 2;
             }
+
+            board_publisher_->publish(board_bottom_mid_point);
         }
 
     if (type == NONE) {
@@ -112,7 +121,7 @@ void RawReceiver::imageCallback(const sensor_msgs::msg::Image::ConstSharedPtr &m
 
     else {
         for ( auto &it : contours_rect_ ) {
-            if ( it.area() < 100) continue;
+            if (it.area() < 1000) continue;
             cv::rectangle(test_mask_ , it, cv::Scalar(255,255,255) , -1);
         }
     }

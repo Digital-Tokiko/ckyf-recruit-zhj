@@ -34,7 +34,7 @@ add_library(decider SHARED
         src/Decider.cpp
 )
 
-target_link_libraries(decider ${OpenCV_LIBS} serialib)
+target_link_libraries(decider  serialib)
 ament_target_dependencies(decider rclcpp std_msgs)
 
 rclcpp_components_register_nodes(decider "Decider")
